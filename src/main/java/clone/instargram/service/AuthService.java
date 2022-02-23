@@ -15,6 +15,11 @@ public class AuthService {
 
     @Transactional
     public User signup(User user){
+
+        if(userRepository.findByEmail(user.getEmail()) != null){
+            return null;
+        }
+
         String rawPassword = user.getPassword();
         String encPassword = bCryptPasswordEncoder.encode(rawPassword);
         user.setPassword(encPassword);
