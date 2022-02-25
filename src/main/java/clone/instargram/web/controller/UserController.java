@@ -10,11 +10,11 @@ public class UserController {
 
     @GetMapping("/story")
     public String story(){
-        return "story";
+        return "/post/story";
     }
 
     @GetMapping("/profile")
     public String profile(){
-        return "profile";
+        return "/user/profile";
     }
 }

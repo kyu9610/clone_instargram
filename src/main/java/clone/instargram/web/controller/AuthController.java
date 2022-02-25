@@ -27,7 +27,7 @@ public class AuthController {
     public String Signup(UserLoginDto userLoginDto){
         User user = userLoginDto.toEntity();
 
-        User userEntity = authService.signup(user);
+        User userEntity = authService.signup(userLoginDto);
         if(userEntity == null){
             return "redirect:/signup?error";
         }
