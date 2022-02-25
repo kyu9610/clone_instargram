@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class UserController {
 
-    @GetMapping("/main")
-    public String home(){
-        return "main";
+    @GetMapping("/story")
+    public String story(){
+        return "story";
+    }
+
+    @GetMapping("/profile")
+    public String profile(){
+        return "profile";
     }
 }
