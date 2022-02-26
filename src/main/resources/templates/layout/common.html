@@ -25,18 +25,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
-<nav th:fragment="menu(menu)">
+<nav th:fragment="menu(user)">
     <input type="hidden" id="principalId" value="${#authentication.getPrincipal().getUser().getId()})}"/>
     <div class="nav-container">
         <div class="nav-1">
-            <img class="logo_instagram" src="/img/logo_text.png" alt="logo_text">
+            <a href="/story"><img class="logo_instagram" src="/img/logo_text.png" alt="logo_text"></a>
         </div>
         <form action="/post/searchForm" method="post"><input id="tag" name="tag" type="text" class="input-search" placeholder="검색"></form>
         <div class="nav-2">
-            <a href="/post/story"><img src="/img/home.png" alt="홈"></a>
+            <a href="/story"><img src="/img/home.png" alt="홈"></a>
+            <a href="/post/dm"><img src="/img/dm.png" alt = "dm"></a>
             <a href="/post/popular"><img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png" alt="탐색"></a>
             <a href="/post/likes"><img  src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png" alt="하트"></a>
-            <a th:href="@{/user/profile(id=${#authentication.getPrincipal().getUser().getId()})}" ><img class="pic" th:src="@{${'/profile_imgs/' + #authentication.getPrincipal().getUser().getProfileImgUrl}}" onerror="this.src='/img/default_profile.jpg';"></a>
+            <a th:href="@{/user/profile/{id}(id=${user.id})}" ><img class="pic" th:src="@{user.profileImgUrl}" onerror="this.src = '/img/default_profile.png';"></a>
         </div>
     </div>
 </nav>

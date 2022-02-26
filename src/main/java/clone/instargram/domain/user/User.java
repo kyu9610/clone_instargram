@@ -25,4 +25,13 @@ public class User{
     private String title;
     private String website;
     private String profileImgUrl;
+
+    public void update(String password,String phone, String username,String title,String website,String profileImgUrl){
+        this.password = password;
+        this.phone = phone;
+        this.username = username;
+        this.title = title;
+        this.website = website;
+        this.profileImgUrl = profileImgUrl;
+    }
 }

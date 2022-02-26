@@ -6,7 +6,7 @@
     <head th:replace="layout/common :: head('Instargram')"></head>
 </head>
 <body>
-<nav th:replace="layout/common :: menu('menu')"></nav>
+<nav th:replace="layout/common :: menu(${user})"></nav>
 <!-- main -->
 <main>
     <div class="feeds">
@@ -104,96 +104,12 @@
     <!-- main-right -->
     <div class="main-right">
         <div class="myProfile">
-            <img class="pic" src="/img/sample.png" alt="sample님의 프로필 사진">
+            <img class="pic" th:src="@{user.profileImgUrl}" onerror="this.src = '/img/default_profile.png';">
             <div>
-                <span class="userID point-span">sample</span>
-                <span class="sub-span">sample</span>
+                <span class="userID point-span" th:text="${user.email}">email</span>
+                <span class="sub-span" th:text="${user.title}">hello</span>
             </div>
         </div>
-        <!--        &lt;!&ndash; story section &ndash;&gt;-->
-        <!--        <div class="section-story">-->
-        <!--            <div class="menu-title">-->
-        <!--                <span class="sub-title">스토리</span>-->
-        <!--                <span class="find-more">모두 보기</span>-->
-        <!--            </div>-->
-        <!--            <ul class="story-list">-->
-        <!--                <li>-->
-        <!--                    <div class="gradient-wrap">-->
-        <!--                        <img class="img-profile story" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s320x320/64219646_866712363683753_7365878438877462528_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=nBT2Cnh5x6kAX9FNW46&oh=63c4eae00baaeef86eedc8ca79499511&oe=5F6B31A0" alt="wecode_bootcamp님의 프로필 사진">-->
-        <!--                    </div>-->
-        <!--                    <div class="profile-text">-->
-        <!--                        <span class="userID point-span">wecode_bootcamp</span>-->
-        <!--                        <span class="sub-span">12분 전</span>-->
-        <!--                    </div>-->
-        <!--                </li>-->
-        <!--                <li>-->
-        <!--                    <div class="gradient-wrap">-->
-        <!--                        <img class="img-profile story" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s320x320/47581322_331313240788424_7580673034705436672_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=fkWaVb4rpLMAX_mkCR5&oh=822f6068b6e28481ccd3fd7820061df1&oe=5F6A82C6" alt="han_ye_seul님의 프로필 사진">-->
-        <!--                    </div>-->
-        <!--                    <div class="profile-text">-->
-        <!--                        <span class="userID point-span">han_ye_seul</span>-->
-        <!--                        <span class="sub-span">28분 전</span>-->
-        <!--                    </div>-->
-        <!--                </li>-->
-        <!--                <li>-->
-        <!--                    <div class="gradient-wrap">-->
-        <!--                        <img class="img-profile story" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s320x320/83054317_174958120526515_9120446663184351232_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=tYlvJUCoTKEAX_gZZa2&oh=a65657b48898f84fd25762a9a51a70d7&oe=5F6A8C65" alt="dntlrdl님의 프로필 사진">-->
-        <!--                    </div>-->
-        <!--                    <div class="profile-text">-->
-        <!--                        <span class="userID point-span">dntlrdl</span>-->
-        <!--                        <span class="sub-span">40분 전</span>-->
-        <!--                    </div>-->
-        <!--                </li>-->
-        <!--                <li>-->
-        <!--                    <div class="gradient-wrap">-->
-        <!--                        <img class="img-profile story" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s320x320/104003354_716384015830603_8920819290329712932_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=98qm88VYcqoAX_OFQ6W&oh=0000cab3adec26de3231e7dcfd4022b2&oe=5F6BC859" alt="i_icaruswalks님의 프로필 사진">-->
-        <!--                    </div>-->
-        <!--                    <div class="profile-text">-->
-        <!--                        <span class="userID point-span">i_icaruswalks</span>-->
-        <!--                        <span class="sub-span">56분 전</span>-->
-        <!--                    </div>-->
-        <!--                </li>-->
-        <!--            </ul>-->
-        <!--        </div>-->
-        <!--        &lt;!&ndash; recommendation section &ndash;&gt;-->
-        <!--        <div class="section-recommend">-->
-        <!--            <div class="menu-title">-->
-        <!--                <span class="sub-title">회원님을 위한 추천</span>-->
-        <!--                <span class="find-more">모두 보기</span>-->
-        <!--            </div>-->
-        <!--            <ul class="recommend-list">-->
-        <!--                <li>-->
-        <!--                    <div class="recommend-friend-profile">-->
-        <!--                        <img class="img-profile" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s320x320/69067759_957976681207922_446652332218777600_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=pFcXhsPcINYAX-G9HiY&oh=4c1ac17f73340c512ae70d383c468b5a&oe=5F6A4AF8" alt="renebaebae님의 프로필 사진">-->
-        <!--                        <div class="profile-text">-->
-        <!--                            <span class="userID point-span">renebaebae</span>-->
-        <!--                            <span class="sub-span">hi_sseulgi님 외 2명이 팔로우합니다</span>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                    <span class="btn-follow">팔로우</span>-->
-        <!--                </li>-->
-        <!--                <li>-->
-        <!--                    <div class="recommend-friend-profile">-->
-        <!--                        <img class="img-profile" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s320x320/88655311_532875984007590_3393720833305214976_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=QsdbsVQx8IsAX9_Fftk&oh=a6515b76d63f7ca3609c211624c1cd60&oe=5F6A4263" alt="_jeongjaehyun님의 프로필 사진">-->
-        <!--                        <div class="profile-text">-->
-        <!--                            <span class="userID point-span">_jeongjaehyun</span>-->
-        <!--                            <span class="sub-span">johnnyjsuh님이 팔로우합니다</span>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                    <span class="btn-follow">팔로우</span>-->
-        <!--                </li>-->
-        <!--                <li>-->
-        <!--                    <div class="recommend-friend-profile">-->
-        <!--                        <img class="img-profile" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s320x320/111281038_926213341219564_1940619922197712205_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=ITcRMERk0UYAX8KwJyW&oh=54d4847a6cb863301315313b83cf1551&oe=5F6BC0E9" alt="leehi_hi님의 프로필 사진">-->
-        <!--                        <div class="profile-text">-->
-        <!--                            <span class="userID point-span">leehi_hi</span>-->
-        <!--                            <span class="sub-span">jennierubyjane님 외 5명이 팔로우합...</span>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                    <span class="btn-follow">팔로우</span>-->
-        <!--                </li>-->
-        <!--            </ul>-->
-        <!--        </div>-->
     </div>
     <footer th:replace="layout/common :: footer('footer')"></footer>
 </main>
